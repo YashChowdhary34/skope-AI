@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} bg-[#171717] antialiased`}>
+        <body
+          className={`${inter.className} text-white bg-[#171717] antialiased`}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
