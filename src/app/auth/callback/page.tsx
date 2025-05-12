@@ -2,12 +2,18 @@ import { onAuthenticateUser } from "@/actions/user";
 import { redirect } from "next/navigation";
 
 export default async function AuthCallbackPage() {
-  //authentication
+  // Authentication
   const auth = await onAuthenticateUser();
+
+  console.log("Auth response:", auth);
+
   if (auth.status === 200 || auth.status === 201) {
-    return redirect(`/dashboard/${auth.user?.workspace[0].id}`);
-  }
-  if (auth.status === 400 || auth.status === 500 || auth.status === 404) {
-    return redirect("/auth/sign-in");
+    if (auth.user?.workspace && auth.user.workspace[0]?.id) {
+      redirect(`/dashboard/${auth.user.workspace[0].id}`);
+    } else {
+      redirect("/auth/sign-in");
+    }
+  } else {
+    redirect("/auth/sign-in");
   }
 }
