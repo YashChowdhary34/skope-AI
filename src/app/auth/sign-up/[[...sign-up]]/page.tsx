@@ -1,6 +1,6 @@
 import React from "react";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
-  return <SignIn />;
+  return <SignUp routing="hash" />;
 }

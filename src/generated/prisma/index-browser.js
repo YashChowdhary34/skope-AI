@@ -162,7 +162,7 @@ exports.Prisma.FolderScalarFieldEnum = {
   id: 'id',
   name: 'name',
   createdAt: 'createdAt',
-  workSpaceId: 'workSpaceId'
+  workspaceId: 'workspaceId'
 };
 
 exports.Prisma.VideoScalarFieldEnum = {
@@ -176,7 +176,7 @@ exports.Prisma.VideoScalarFieldEnum = {
   summary: 'summary',
   folderId: 'folderId',
   userId: 'userId',
-  workSpaceId: 'workSpaceId'
+  workspaceId: 'workspaceId'
 };
 
 exports.Prisma.MemberScalarFieldEnum = {
@@ -184,7 +184,7 @@ exports.Prisma.MemberScalarFieldEnum = {
   userId: 'userId',
   createId: 'createId',
   member: 'member',
-  workSpaceId: 'workSpaceId'
+  workspaceId: 'workspaceId'
 };
 
 exports.Prisma.NotificationScalarFieldEnum = {
@@ -198,7 +198,7 @@ exports.Prisma.InviteScalarFieldEnum = {
   senderId: 'senderId',
   recieverId: 'recieverId',
   content: 'content',
-  workSpaceId: 'workSpaceId',
+  workspaceId: 'workspaceId',
   accepted: 'accepted'
 };
 

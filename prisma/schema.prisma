@@ -24,7 +24,7 @@ model User {
   clerkid     String   @unique
   studio      Media?
   image       String?
-  Workspace   WorkSpace[]
+  workspace   WorkSpace[]
   videos      Video[]
   subscription Subscription?
   members     Member[]
@@ -56,9 +56,9 @@ enum PRESET {
 
 model Media {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  screen    String
-  mic       String
-  camera    String
+  screen    String?
+  mic       String?
+  camera    String?
   preset    PRESET @default(SD)
   User      User? @relation(fields: [userId], references: [id])
   userId    String? @unique @db.Uuid
@@ -86,8 +86,8 @@ model Folder {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      String   @default("Untitled Folder")
   createdAt DateTime @default(now())
-  WorkSpace WorkSpace? @relation(fields: [workSpaceId], references: [id])
-  workSpaceId String? @db.Uuid
+  WorkSpace WorkSpace? @relation(fields: [workspaceId], references: [id])
+  workspaceId String? @db.Uuid
   videos    Video[]
 }
 
@@ -104,8 +104,8 @@ model Video {
   folderId   String? @db.Uuid
   User       User? @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId     String? @db.Uuid
-  WorkSpace  WorkSpace? @relation(fields: [workSpaceId], references: [id], onDelete: Cascade)
-  workSpaceId String? @db.Uuid
+  WorkSpace  WorkSpace? @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String? @db.Uuid
 }
 
 model Member {
@@ -114,8 +114,8 @@ model Member {
   userId     String?  @db.Uuid
   createId   DateTime @default(now())
   member     Boolean  @default(true)
-  WorkSpace  WorkSpace? @relation(fields: [workSpaceId], references: [id])
-  workSpaceId String? @db.Uuid
+  WorkSpace  WorkSpace? @relation(fields: [workspaceId], references: [id])
+  workspaceId String? @db.Uuid
 }
 
 model Notification {
@@ -132,7 +132,7 @@ model Invite {
   reciever  User? @relation("reciever", fields: [recieverId], references: [id])
   recieverId String? @db.Uuid
   content   String
-  WorkSpace WorkSpace? @relation(fields: [workSpaceId], references: [id])
-  workSpaceId String? @db.Uuid
+  WorkSpace WorkSpace? @relation(fields: [workspaceId], references: [id])
+  workspaceId String? @db.Uuid
   accepted  Boolean  @default(false)
 }
