@@ -2,10 +2,15 @@ import React from "react";
 
 interface SpinnerProps {
   size?: number;
+  color?: string;
   className?: string;
 }
 
-const Spinner: React.FC<SpinnerProps> = ({ size = 40, className = "" }) => {
+const Spinner: React.FC<SpinnerProps> = ({
+  size = 40,
+  color = "white",
+  className = "",
+}) => {
   return (
     <div className={className}>
       <svg
@@ -20,7 +25,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size = 40, className = "" }) => {
           cx="60"
           cy="60"
           r="50"
-          stroke="white"
+          stroke={color}
           strokeWidth="6"
           strokeOpacity="0.2"
           fill="none"
@@ -30,7 +35,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size = 40, className = "" }) => {
         <path
           d="M60 10
              A50 50 0 0 1 110 60"
-          stroke="white"
+          stroke={color}
           strokeWidth="6"
           strokeLinecap="round"
           fill="none"
@@ -40,7 +45,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size = 40, className = "" }) => {
         <g transform="translate(38, 38) scale(0.35)">
           <polygon
             points="60,20 100,60 60,100 20,60"
-            fill="white"
+            fill={color}
             opacity="0.9"
           />
           <circle
@@ -48,7 +53,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size = 40, className = "" }) => {
             cy="60"
             r="15"
             fill="none"
-            stroke="white"
+            stroke={color}
             strokeWidth="6"
           />
         </g>
