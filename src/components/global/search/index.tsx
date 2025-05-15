@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSearch } from "@/hooks/use-search";
-import { useMutationData } from "@/hooks/useMutationData";
 import { User } from "lucide-react";
 import React from "react";
 import Loader from "../loader";
