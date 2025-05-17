@@ -8,6 +8,7 @@ import ReactQueryProvider from "@/react-query";
 
 const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {

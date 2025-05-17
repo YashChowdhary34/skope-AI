@@ -195,8 +195,8 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
           title="Upgrade to Pro"
           description="Unlock AI features like transciption, AI summary, and more."
           footer={
-            <Button className="text-sm w-full mt-2">
-              <Loader>Upgrade</Loader>
+            <Button className="text-sm w-full">
+              <Loader state={false}>Upgrade</Loader>
             </Button>
           }
         ></GlobalCard>
